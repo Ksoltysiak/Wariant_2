@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szyfr Vigenere</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Szyfr Vigenere</h1>
+    <form id="cipherForm">
+        <label for="text">Tekst:</label>
+        <textarea id="text" required></textarea>
+
+        <label for="key">Klucz:</label>
+        <input type="text" id="key" required>
+
+        <button type="button" onclick="encryptText()">Szyfruj</button>
+        <button type="button" onclick="decryptText()">Deszyfruj</button>
+    </form>
+
+    <h2>Wynik:</h2>
+    <p id="result"></p>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
