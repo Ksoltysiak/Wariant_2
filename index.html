@@ -10,8 +10,8 @@
   <div class="container">
     <h1>Szyfr Vigenere</h1>
 
-    <!-- Formularz wysyła dane do cipher.php -->
-    <form id="cipherForm" action="cipher.php" method="POST">
+    <!-- Formularz wysyła dane do cipher.php metodą POST -->
+    <form action="cipher.php" method="POST">
       <label for="text">Tekst do szyfrowania/deszyfrowania:</label>
       <textarea id="text" name="text" rows="4" required></textarea>
 
@@ -19,25 +19,14 @@
       <input type="text" id="key" name="key" required />
 
       <div class="buttons">
-        <!-- Po kliknięciu "Szyfruj" lub "Deszyfruj" => cipher.php wykona logikę -->
+        <!-- Dwa przyciski, rozróżniające akcję w cipher.php -->
         <button type="submit" name="action" value="encrypt">Szyfruj</button>
         <button type="submit" name="action" value="decrypt">Deszyfruj</button>
       </div>
     </form>
 
-    <!-- Wyświetlanie siły klucza -->
+    <!-- Wyświetlanie siły klucza (tylko w JS) -->
     <div id="keyStrength" class="key-strength"></div>
-
-    <!-- Sekcja z wynikiem (wyświetlamy go po przekierowaniu z cipher.php) -->
-    <div class="result">
-      <h2>Wynik:</h2>
-      <!-- PHP fragment do przechwycenia ewentualnego wyniku z query param -->
-      <?php
-      if (isset($_GET['result'])) {
-        echo '<p>' . htmlspecialchars($_GET['result']) . '</p>';
-      }
-      ?>
-    </div>
   </div>
 </body>
 </html>
